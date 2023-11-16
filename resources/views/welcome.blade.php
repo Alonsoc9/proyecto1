@@ -1,263 +1,626 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+    	<!-- meta charec set -->
+        <meta charset="utf-8">
+		<!-- Always force latest IE rendering engine or request Chrome Frame -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- Page Title -->
+        <title>TechEncrypt</title>		
+		<!-- Meta Description -->
+        <meta name="description" content="Blue One Page Creative HTML5 Template">
+        <meta name="keywords" content="one page, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
+        <meta name="author" content="Muhammad Morshed">
+		<!-- Mobile Specific Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Google Font -->
+		
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type="text/css">
 
-<head>
-    <meta charset="utf-8">
-    <title>Tech</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+		<!-- CSS
+		================================================== -->
+		<!-- Fontawesome Icon font -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- Twitter Bootstrap css -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- jquery.fancybox  -->
+        <link rel="stylesheet" href="css/jquery.fancybox.css">
+		<!-- animate -->
+        <link rel="stylesheet" href="css/animate.css">
+		<!-- Main Stylesheet -->
+        <link rel="stylesheet" href="css/main.css">
+		<!-- media-queries -->
+        <link rel="stylesheet" href="css/media-queries.css">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+		<!-- Modernizer Script for old Browsers -->
+        <script src="js/modernizr-2.6.2.min.js"></script>
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+    </head>
+	
+    <body id="body">
+	
+		<!-- preloader -->
+		<div id="preloader">
+			<img src="img/preloader.gif" alt="Preloader">
+		</div>
+		<!-- end preloader -->
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="{{asset('assets/lib/animate/animate.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
-</head>
-
-<body>
-    <div class="container-xxl bg-white p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
-
-
-        <!-- Navbar & Hero Start -->
-        <div class="container-xxl position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="" class="navbar-brand p-0">
-                    <h1 class="m-0">TechEncrypt</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav mx-auto py-0">
-                        <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
-
-                        @if(auth()->check())
-                        <a href="{{ url('/historial') }}" class="nav-item nav-link">Historial</a>
-                        <a href="{{ url('/encriptar') }}" class="nav-item nav-link">Encriptar</a>
-                        <a href="{{ url('/desencriptar') }}" class="nav-item nav-link">Desencriptar</a>
-                        
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                        
-                            <a href="{{ route('logout') }}" class="nav-item nav-link" onclick="event.preventDefault(); this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </a>
-                        </form>
-                        @endif
-
-
-
-                        <br><br>
-                        @if(auth()->check())
-                        <div>
-                            @if(auth()->user()->profile_image)
-                            <img src="{{ auth()->user()->profile_image }}" alt="User Avatar" class="rounded-circle me-2" style="width: 40px; height: 40px;">
-                        @endif
-                            <span class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">
-                                Hola, {{ auth()->user()->name }}
-                            </span>                            <!-- Otros elementos del usuario autenticado -->
-                        </div>
-                    @else
-                        <div>
-                            <a href="{{ route('login') }}" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">LOGIN</a>
-                        </div>
-                    @endif
-            </nav>
-
-            <div class="container-xxl bg-primary hero-header">
-                <div class="container px-lg-5">
-                    <div class="row g-5 align-items-end">
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="text-white mb-4 animated slideInDown">Cifrando el presente, protegiendo el futuro.</h1>
-                            <p class="text-white pb-3 animated slideInDown">Somos una empresa encargada de proteger los archivos de tu empresa, negocio de una manera segura y unica</p>
-                            <a href="" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read More</a>
-                            <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
-                        </div>
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <img class="img-fluid animated zoomIn" src="{{asset('assets/img/hero.png')}}" alt="">
-                        </div>
-                    </div>
+        <!-- 
+        Fixed Navigation
+        ==================================== -->
+        <header id="navigation" class="navbar-fixed-top navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-bars fa-2x"></i>
+                    </button>
+					<!-- /responsive nav button -->
+					
+					<!-- logo -->
+                    <a class="navbar-brand" href="#body">
+						<h1 id="logo">
+							<img src="img/logo.png" alt="Brandi">
+						</h1>
+					</a>
+					<!-- /logo -->
                 </div>
+
+				<!-- main nav -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <ul id="nav" class="nav navbar-nav">
+                        <li class="current"><a href="#body">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#works">Work</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="http://google.com">Contact</a></li>
+                    </ul>
+                </nav>
+				<!-- /main nav -->
+				
             </div>
-        </div>
-        <!-- Navbar & Hero End -->
-
-
-      
-
-
-        <!-- Service Start -->
-        <div class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="section-title text-secondary justify-content-center"><span></span>Our Services<span></span></p>
-                    <h1 class="text-center mb-5">¿Qué deseas hacer?</h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fa fa-search fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Mi historial</h5>
-                            <p class="m-0">Aquí encontraras todos los archivos que has incriptado</p>
-                            <a class="btn btn-square" href="{{ url('/historial') }}"><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fa fa-laptop-code fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Encriptar Archivos</h5>
-                            <p class="m-0">Encripta de manera segura tus fotos, videos, documentos y toda clase de archivos</p>
-                            <a class="btn btn-square" href="{{ url('/encriptar') }}"><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fa fa-mail-bulk fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Desencriptar Archivos</h5>
-                            <p class="m-0">Desencripta y descarga de manera segura tus archivos</p>
-                            <a class="btn btn-square" href="{{ url('/desencriptar') }}"><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                   
-                    
-                </div>
-            </div>
-        </div>
-        <!-- Service End -->
-
-
-        <!-- Footer Start -->
-        <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Address<span></span></p>
-                        <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                        <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                        <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
-                        <a class="btn btn-link" href="">About Us</a>
-                        <a class="btn btn-link" href="">Contact Us</a>
-                        <a class="btn btn-link" href="">Privacy Policy</a>
-                        <a class="btn btn-link" href="">Terms y Condition</a>
-                        <a class="btn btn-link" href="">Career</a>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Gallery<span></span></p>
-                        <div class="row g-2">
-                            <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-1.jpg" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-2.jpg" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-3.jpg" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-4.jpg" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-5.jpg" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-6.jpg" alt="Image">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
-                        <p>Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulpu</p>
-                        <div class="position-relative w-100 mt-3">
-                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
-                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container px-lg-5">
-                <div class="copyright">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved. 
+        </header>
+        <!--
+        End Fixed Navigation
+        ==================================== -->
+		
+		
+		
+        <!--
+        Home Slider
+        ==================================== -->
+		
+		<section id="slider">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			
+				<!-- Indicators bullet -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				</ol>
+				<!-- End Indicators bullet -->				
+				
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					
+					<!-- single slide -->
+					<div class="item active" style="background-image: url(img/banner.jpg);">
+						<div class="carousel-caption">
+							<h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">Meet<span> Brandi</span>!</h2>
+							<h3 data-wow-duration="1000ms" class="wow slideInLeft animated"><span class="color">/creative</span> one page template.</h3>
+							<p data-wow-duration="1000ms" class="wow slideInRight animated">We are a team of professionals</p>
 							
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
-                            Distributed By a <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FQAs</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
+							<ul class="social-links text-center">
+								<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-dribbble fa-lg"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- end single slide -->
+					
+					<!-- single slide -->
+					<div class="item" style="background-image: url(img/banner.jpg);">
+						<div class="carousel-caption">
+							<h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">Meet<span> Team</span>!</h2>
+							<h3 data-wow-duration="500ms" class="wow slideInLeft animated"><span class="color">/creative</span> one page template.</h3>
+							<p data-wow-duration="500ms" class="wow slideInRight animated">We are a team of professionals</p>
+							
+							<ul class="social-links text-center">
+								<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-dribbble fa-lg"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- end single slide -->
+					
+				</div>
+				<!-- End Wrapper for slides -->
+				
+			</div>
+		</section>
+		
+        <!--
+        End Home SliderEnd
+        ==================================== -->
+		
+        <!--
+        Features
+        ==================================== -->
+		
+		<section id="features" class="features">
+			<div class="container">
+				<div class="row">
+				
+					<div class="sec-title text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
+						<h2>Features</h2>
+						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+					</div>
 
+					<!-- service item -->
+					<div class="col-md-4 wow fadeInLeft" data-wow-duration="500ms">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fa fa-github fa-2x"></i>
+							</div>
+							
+							<div class="service-desc">
+								<h3>Branding</h3>
+								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+							</div>
+						</div>
+					</div>
+					<!-- end service item -->
+					
+					<!-- service item -->
+					<div class="col-md-4 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fa fa-pencil fa-2x"></i>
+							</div>
+							
+							<div class="service-desc">
+								<h3>Development</h3>
+								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+							</div>
+						</div>
+					</div>
+					<!-- end service item -->
+					
+					<!-- service item -->
+					<div class="col-md-4 wow fadeInRight" data-wow-duration="500ms"  data-wow-delay="900ms">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fa fa-bullhorn fa-2x"></i>
+							</div>
+							
+							<div class="service-desc">
+								<h3>Consulting</h3>
+								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+							</div>
+						</div>
+					</div>
+					<!-- end service item -->
+						
+				</div>
+			</div>
+		</section>
+		
+        <!--
+        End Features
+        ==================================== -->
+		
+		
+        <!--
+        Our Works
+        ==================================== -->
+		
+		
+		
+        <!--
+        End Our Works
+        ==================================== -->
+		
+        <!--
+        Meet Our Team
+        ==================================== -->		
+		
+		<section id="team" class="team">
+			<div class="container">
+				<div class="row">
+		
+					<div class="sec-title text-center wow fadeInUp animated" data-wow-duration="700ms">
+						<h2>Meet Our Team</h2>
+						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+					</div>
+					
+					<div class="sec-sub-title text-center wow fadeInRight animated" data-wow-duration="500ms">
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+					</div>
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
+					<!-- single member -->
+					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
+						<div class="member-thumb">
+							<img src="img/team/member-1.png" alt="Team Member" class="img-responsive">
+							<figcaption class="overlay">
+								<h5>voluptatem quia voluptas </h5>
+								<p>sit aspernatur aut odit aut fugit,</p>
+								<ul class="social-links text-center">
+									<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
+								</ul>
+							</figcaption>
+						</div>
+						<h4>John Filmr Doe</h4>
+						<span>Managing Director</span>
+					</figure>
+					<!-- end single member -->
+					
+					<!-- single member -->
+					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+						<div class="member-thumb">
+							<img src="img/team/member-2.png" alt="Team Member" class="img-responsive">
+							<figcaption class="overlay">
+								<h5>voluptatem quia voluptas </h5>
+								<p>sit aspernatur aut odit aut fugit,</p>
+								<ul class="social-links text-center">
+									<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
+								</ul>
+							</figcaption>
+						</div>
+						<h4>Martin Matrone</h4>
+						<span>Lead Developer</span>
+					</figure>
+					<!-- end single member -->
+					
+					<!-- single member -->
+					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+						<div class="member-thumb">
+							<img src="img/team/member-3.png" alt="Team Member" class="img-responsive">
+							<figcaption class="overlay">
+								<h5>voluptatem quia voluptas </h5>
+								<p>sit aspernatur aut odit aut fugit,</p>
+								<ul class="social-links text-center">
+									<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
+								</ul>
+							</figcaption>
+						</div>
+						<h4>Steve Flaulkin</h4>
+						<span>Sr. UI Designer</span>
+					</figure>
+					<!-- end single member -->
+					
+					<!-- single member -->
+					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
+						<div class="member-thumb">
+							<img src="img/team/member-1.png" alt="Team Member" class="img-responsive">
+							<figcaption class="overlay">
+								<h5>voluptatem quia voluptas </h5>
+								<p>sit aspernatur aut odit aut fugit,</p>
+								<ul class="social-links text-center">
+									<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
+								</ul>
+							</figcaption>
+						</div>
+						<h4>John Filmr Doe</h4>
+						<span>Managing Director</span>
+					</figure>
+					<!-- end single member -->
+					
+				</div>
+			</div>
+		</section>
+		
+        <!--
+        End Meet Our Team
+        ==================================== -->
+		
+		<!--
+        Some fun facts
+        ==================================== -->		
+		
+		<section id="facts" class="facts">
+			<div class="parallax-overlay">
+				<div class="container">
+					<div class="row number-counters">
+						
+						<div class="sec-title text-center mb50 wow rubberBand animated" data-wow-duration="1000ms">
+							<h2>Some Fun Facts</h2>
+							<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+						</div>
+						
+						<!-- first count item -->
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
+							<div class="counters-item">
+								<i class="fa fa-clock-o fa-3x"></i>
+								<strong data-to="3200">0</strong>
+								<!-- Set Your Number here. i,e. data-to="56" -->
+								<p>Hours of Work</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+							<div class="counters-item">
+								<i class="fa fa-users fa-3x"></i>
+								<strong data-to="120">0</strong>
+								<!-- Set Your Number here. i,e. data-to="56" -->
+								<p>Satisfied Clients</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+							<div class="counters-item">
+								<i class="fa fa-rocket fa-3x"></i>
+								<strong data-to="360">0</strong>
+								<!-- Set Your Number here. i,e. data-to="56" -->
+								<p> Projects Delivered </p>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
+							<div class="counters-item">
+								<i class="fa fa-trophy fa-3x"></i>
+								<strong data-to="6454">0</strong>
+								<!-- Set Your Number here. i,e. data-to="56" -->
+								<p>Awards Won</p>
+							</div>
+						</div>
+						<!-- end first count item -->
+				
+					</div>
+				</div>
+			</div>
+		</section>
+		
+        <!--
+        End Some fun facts
+        ==================================== -->
+		
+		
+		<!--
+        Contact Us
+        ==================================== -->		
+		
+		<section id="contact" class="contact">
+			<div class="container">
+				<div class="row mb50">
+				
+					<div class="sec-title text-center mb50 wow fadeInDown animated" data-wow-duration="500ms">
+						<h2>Let’s Discuss</h2>
+						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+					</div>
+					
+					<div class="sec-sub-title text-center wow rubberBand animated" data-wow-duration="1000ms">
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+					</div>
+					
+					<!-- contact address -->
+					<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 wow fadeInLeft animated" data-wow-duration="500ms">
+						<div class="contact-address">
+							<h3>Cras at ultrices erat, sed vulputate!</h3>
+							<p>2345 Setwant natrer, 1234,</p>
+							<p>Washington. United States.</p>
+							<p>(401) 1234 567</p>
+						</div>
+					</div>
+					<!-- end contact address -->
+					
+					<!-- contact form -->
+					<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="300ms">
+						<div class="contact-form">
+							<h3>Say hello!</h3>
+							<form action="#" id="contact-form">
+								<div class="input-group name-email">
+									<div class="input-field">
+										<input type="text" name="name" id="name" placeholder="Name" class="form-control">
+									</div>
+									<div class="input-field">
+										<input type="email" name="email" id="email" placeholder="Email" class="form-control">
+									</div>
+								</div>
+								<div class="input-group">
+									<textarea name="message" id="message" placeholder="Message" class="form-control"></textarea>
+								</div>
+								<div class="input-group">
+									<input type="submit" id="form-submit" class="pull-right" value="Send message">
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- end contact form -->
+					
+					<!-- footer social links -->
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 wow fadeInRight animated" data-wow-duration="500ms" data-wow-delay="600ms">
+						<ul class="footer-social">
+							<li><a href="https://www.behance.net/Themefisher"><i class="fa fa-behance fa-2x"></i></a></li>
+							<li><a href="https://www.twitter.com/Themefisher"><i class="fa fa-twitter fa-2x"></i></a></li>
+							<li><a href="https://dribbble.com/themefisher"><i class="fa fa-dribbble fa-2x"></i></a></li>
+							<li><a href="https://www.facebook.com/Themefisher"><i class="fa fa-facebook fa-2x"></i></a></li>
+						</ul>
+					</div>
+					<!-- end footer social links -->
+					
+				</div>
+			</div>
+			
+			<!-- Google map -->
+			<div id="map_canvas" class="wow bounceInDown animated" data-wow-duration="500ms"></div>
+			<!-- End Google map -->
+			
+		</section>
+		
+        <!--
+        End Contact Us
+        ==================================== -->
+		
+		
+		<footer id="footer" class="footer">
+			<div class="container">
+				<div class="row">
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms">
+						<div class="footer-single">
+							<img src="img/footer-logo.png" alt="">
+							<p>eusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+						<div class="footer-single">
+							<h6>Subscribe </h6>
+							<form action="#" class="subscribe">
+								<input type="text" name="subscribe" id="subscribe">
+								<input type="submit" value="&#8594;" id="subs">
+							</form>
+							<p>eusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+						<div class="footer-single">
+							<h6>Explore</h6>
+							<ul>
+								<li><a href="#">Inside Us</a></li>
+								<li><a href="#">Flickr</a></li>
+								<li><a href="#">Google</a></li>
+								<li><a href="#">Forum</a></li>
+							</ul>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
+						<div class="footer-single">
+							<h6>Support</h6>
+							<ul>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Market Blog</a></li>
+								<li><a href="#">Help Center</a></li>
+								<li><a href="#">Pressroom</a></li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="copyright text-center">
+							Copyright © 2015 <a href="http://themefisher.com/">Themefisher</a>. All rights reserved. Designed y developed by <a href="http://themefisher.com/">Themefisher</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<a href="javascript:void(0);" id="back-top"><i class="fa fa-angle-up fa-3x"></i></a>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{asset('assets/lib/wow/wow.min.js')}}"></script>
-    <script src="{{asset('assets/lib/easing/easing.min.js')}}"></script>
-    <script src="{{asset('assets/lib/waypoints/waypoints.min.js')}}"></script>
-    <script src="{{asset('assets/lib/counterup/conterup.min.js')}}"></script>
-    <script src="{{asset('assets/lib/owlcarousel/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('assets/lib/isotope/isotope.pkgd.min.js')}}"></script>
-    <script src= "{{asset('assets/lib/lightbox/js/lightbox.min.js')}}"></script>
-
-    <!-- Template Javascript -->
-    <script src="{{asset('assets/js/main.js')}}"></script>
-</body>
-
+		<!-- Essential jQuery Plugins
+		================================================== -->
+		<!-- Main jQuery -->
+        <script src="js/jquery-1.11.1.min.js"></script>
+		<!-- Single Page Nav -->
+        <script src="js/jquery.singlePageNav.min.js"></script>
+		<!-- Twitter Bootstrap -->
+        <script src="js/bootstrap.min.js"></script>
+		<!-- jquery.fancybox.pack -->
+        <script src="js/jquery.fancybox.pack.js"></script>
+		<!-- jquery.mixitup.min -->
+        <script src="js/jquery.mixitup.min.js"></script>
+		<!-- jquery.parallax -->
+        <script src="js/jquery.parallax-1.1.3.js"></script>
+		<!-- jquery.countTo -->
+        <script src="js/jquery-countTo.js"></script>
+		<!-- jquery.appear -->
+        <script src="js/jquery.appear.js"></script>
+		<!-- Contact form validation -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
+		<!-- Google Map -->
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<!-- jquery easing -->
+        <script src="js/jquery.easing.min.js"></script>
+		<!-- jquery easing -->
+        <script src="js/wow.min.js"></script>
+		<script>
+			var wow = new WOW ({
+				boxClass:     'wow',      // animated element css class (default is wow)
+				animateClass: 'animated', // animation css class (default is animated)
+				offset:       120,          // distance to the element when triggering the animation (default is 0)
+				mobile:       false,       // trigger animations on mobile devices (default is true)
+				live:         true        // act on asynchronously loaded content (default is true)
+			  }
+			);
+			wow.init();
+		</script> 
+		<!-- Custom Functions -->
+        <script src="js/custom.js"></script>
+		
+		<script type="text/javascript">
+			$(function(){
+				/* ========================================================================= */
+				/*	Contact Form
+				/* ========================================================================= */
+				
+				$('#contact-form').validate({
+					rules: {
+						name: {
+							required: true,
+							minlength: 2
+						},
+						email: {
+							required: true,
+							email: true
+						},
+						message: {
+							required: true
+						}
+					},
+					messages: {
+						name: {
+							required: "come on, you have a name don't you?",
+							minlength: "your name must consist of at least 2 characters"
+						},
+						email: {
+							required: "no email, no message"
+						},
+						message: {
+							required: "um...yea, you have to write something to send this form.",
+							minlength: "thats all? really?"
+						}
+					},
+					submitHandler: function(form) {
+						$(form).ajaxSubmit({
+							type:"POST",
+							data: $(form).serialize(),
+							url:"process.php",
+							success: function() {
+								$('#contact-form :input').attr('disabled', 'disabled');
+								$('#contact-form').fadeTo( "slow", 0.15, function() {
+									$(this).find(':input').attr('disabled', 'disabled');
+									$(this).find('label').css('cursor','default');
+									$('#success').fadeIn();
+								});
+							},
+							error: function() {
+								$('#contact-form').fadeTo( "slow", 0.15, function() {
+									$('#error').fadeIn();
+								});
+							}
+						});
+					}
+				});
+			});
+		</script>
+    </body>
 </html>
