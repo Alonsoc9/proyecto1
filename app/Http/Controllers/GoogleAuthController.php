@@ -34,13 +34,13 @@ class GoogleAuthController extends Controller
                     ]);
 
                     Auth::login($new_user);
-                    return redirect()->intended('/');
+                    return redirect()->intended('/dashboard');
                 }
             }
 
             // El usuario existe, inicia sesión
             Auth::login($user);
-            return redirect()->intended('/');
+            return redirect()->intended('/dashboard');
         } catch (\Throwable $th) {
             dd('Something went wrong! ' . $th->getMessage());
         }
