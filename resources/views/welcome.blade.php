@@ -76,9 +76,9 @@
                     <ul id="nav" class="nav navbar-nav">
                         <li class="current"><a href="#body">Home</a></li>
                         <li><a href="#features">Features</a></li>
-                        <li><a href="#works">Work</a></li>
                         <li><a href="#team">Team</a></li>
-                        <li><a href="http://google.com">Contact</a></li>
+                        <li><a href="#contact">Contact</a></li>
+						<li id="abrirModal"><a href="#ventanaModal">Login</a></li>
                     </ul>
                 </nav>
 				<!-- /main nav -->
@@ -88,7 +88,25 @@
         <!--
         End Fixed Navigation
         ==================================== -->
-		
+		<!--AQUI inicia la vetana modal-->
+	<section id="ventanaModal" class="modal">
+        <div class="modal-content">
+            <span class="cerrar">&times;</span>
+            <div style="text-align: center;">
+                <h3>Login</h3>
+				<br>
+                <button id="googleLogin" class="login-btn google-btn" onclick="redirectToGoogleSignup()">
+                    <i class="fab fa-google"></i> Login with Google
+                </button>
+                <button id="facebookLogin" class="login-btn facebook-btn" onclick="redirectToFacebook()">
+                    <i class="fab fa-facebook"></i> Login with Facebook
+                </button>
+            </div>
+        </div>
+    </section>
+	<!--Aqui termina la ventana modal-->
+
+
 		
 		
         <!--
@@ -111,8 +129,8 @@
 					<!-- single slide -->
 					<div class="item active" style="background-image: url(img/banner.jpg);">
 						<div class="carousel-caption">
-							<h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">Meet<span> Brandi</span>!</h2>
-							<h3 data-wow-duration="1000ms" class="wow slideInLeft animated"><span class="color">/creative</span> one page template.</h3>
+							<h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">Tech<span> Encrypt!</span>!</h2>
+							<h3 data-wow-duration="1000ms" class="wow slideInLeft animated"><span class="color">/secure</span> Information.</h3>
 							<p data-wow-duration="1000ms" class="wow slideInRight animated">We are a team of professionals</p>
 							
 							<ul class="social-links text-center">
@@ -128,8 +146,8 @@
 					<!-- single slide -->
 					<div class="item" style="background-image: url(img/banner.jpg);">
 						<div class="carousel-caption">
-							<h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">Meet<span> Team</span>!</h2>
-							<h3 data-wow-duration="500ms" class="wow slideInLeft animated"><span class="color">/creative</span> one page template.</h3>
+							<h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">Tech<span>Encrypt!</span>!</h2>
+							<h3 data-wow-duration="500ms" class="wow slideInLeft animated"><span class="color">/secure</span> Information</h3>
 							<p data-wow-duration="500ms" class="wow slideInRight animated">We are a team of professionals</p>
 							
 							<ul class="social-links text-center">
@@ -169,12 +187,17 @@
 					<div class="col-md-4 wow fadeInLeft" data-wow-duration="500ms">
 						<div class="service-item">
 							<div class="service-icon">
-								<i class="fa fa-github fa-2x"></i>
+								<i class="fa-sharp fa-solid fa-file-shield fa-xl"></i>
 							</div>
 							
 							<div class="service-desc">
-								<h3>Branding</h3>
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+								<h3>End-to-End Encryption (E2E)</h3>
+								<p style="text-align: justify;">
+									E2E encryption provides a sense of security and control. 
+									Users feel protected and confident knowing their documents are
+									safe from unwanted intrusions. 
+									This fosters trust and peace of mind when sharing sensitive information.
+								</p>
 							</div>
 						</div>
 					</div>
@@ -188,23 +211,32 @@
 							</div>
 							
 							<div class="service-desc">
-								<h3>Development</h3>
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+								<h3>Advanced Encryption Algorithms</h3>
+								<p style="text-align: justify;">
+									Our encryption uses the most advanced algorithms, 
+									the same ones used by government agencies and high-security
+									businesses. Your documents are safeguarded 
+									by the most cutting-edge technology available.
+								</p>
 							</div>
 						</div>
 					</div>
 					<!-- end service item -->
 					
-					<!-- service item -->
 					<div class="col-md-4 wow fadeInRight" data-wow-duration="500ms"  data-wow-delay="900ms">
 						<div class="service-item">
 							<div class="service-icon">
-								<i class="fa fa-bullhorn fa-2x"></i>
+								<i class="fa-sharp fa-solid fa-key fa-xl"></i>
 							</div>
 							
 							<div class="service-desc">
-								<h3>Consulting</h3>
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+								<h3>Simplified Encryption Key Management</h3>
+								<p style="text-align: justify;">
+									Simplified encryption key management relieves anxiety and mental burden. 
+									Users don't have to worry about complex
+									passwords or confusing processes. 
+									This promotes a sense of ease and convenience when safeguarding vital information.
+								</p>
 							</div>
 						</div>
 					</div>
@@ -243,16 +275,18 @@
 					</div>
 					
 					<div class="sec-sub-title text-center wow fadeInRight animated" data-wow-duration="500ms">
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+						<p>
+							We are a team of developers who are passionate about technology and your security is our priority
+						</p>					
 					</div>
 
 					<!-- single member -->
 					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
 						<div class="member-thumb">
-							<img src="img/team/member-1.png" alt="Team Member" class="img-responsive">
+							<img src="img/team/rico.jpeg" alt="Team Member" class="img-responsive">
 							<figcaption class="overlay">
-								<h5>voluptatem quia voluptas </h5>
-								<p>sit aspernatur aut odit aut fugit,</p>
+								<h5>Rico Iuit Roberto </h5>
+								<p>International relations expert</p>
 								<ul class="social-links text-center">
 									<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
 									<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
@@ -260,18 +294,18 @@
 								</ul>
 							</figcaption>
 						</div>
-						<h4>John Filmr Doe</h4>
-						<span>Managing Director</span>
+						<h4>Rico Iuit Roberto</h4>
+						<span>CEO TechEncrypt</span>
 					</figure>
 					<!-- end single member -->
 					
 					<!-- single member -->
 					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
 						<div class="member-thumb">
-							<img src="img/team/member-2.png" alt="Team Member" class="img-responsive">
+							<img src="img/team/alonso.jpeg" alt="Team Member" class="img-responsive">
 							<figcaption class="overlay">
-								<h5>voluptatem quia voluptas </h5>
-								<p>sit aspernatur aut odit aut fugit,</p>
+								<h5>Cauich Córdova Jesus Alonso </h5>
+								<p>Expert in creating advanced algorithms</p>
 								<ul class="social-links text-center">
 									<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
 									<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
@@ -279,18 +313,18 @@
 								</ul>
 							</figcaption>
 						</div>
-						<h4>Martin Matrone</h4>
-						<span>Lead Developer</span>
+						<h4>Cauich Cordóva Jesús Alonso</h4>
+						<span>Back-End Developer</span>
 					</figure>
 					<!-- end single member -->
 					
 					<!-- single member -->
 					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
 						<div class="member-thumb">
-							<img src="img/team/member-3.png" alt="Team Member" class="img-responsive">
+							<img src="img/team/arcia.jpeg" alt="Team Member" class="img-responsive">
 							<figcaption class="overlay">
-								<h5>voluptatem quia voluptas </h5>
-								<p>sit aspernatur aut odit aut fugit,</p>
+								<h5>Arcia Sosa José Manuel</h5>
+								<p>Expert in creating international designs</p>
 								<ul class="social-links text-center">
 									<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
 									<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
@@ -298,7 +332,7 @@
 								</ul>
 							</figcaption>
 						</div>
-						<h4>Steve Flaulkin</h4>
+						<h4>Arcia Sosa José Manuel</h4>
 						<span>Sr. UI Designer</span>
 					</figure>
 					<!-- end single member -->
@@ -306,10 +340,10 @@
 					<!-- single member -->
 					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
 						<div class="member-thumb">
-							<img src="img/team/member-1.png" alt="Team Member" class="img-responsive">
+							<img src="img/team/gabriel.jpeg" alt="Team Member" class="img-responsive">
 							<figcaption class="overlay">
-								<h5>voluptatem quia voluptas </h5>
-								<p>sit aspernatur aut odit aut fugit,</p>
+								<h5>Cajun Yam José Gabriel</h5>
+								<p>Passionate about leading and using software development methodologies,</p>
 								<ul class="social-links text-center">
 									<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
 									<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
@@ -317,8 +351,8 @@
 								</ul>
 							</figcaption>
 						</div>
-						<h4>John Filmr Doe</h4>
-						<span>Managing Director</span>
+						<h4>Cajun Yam José Gabriel</h4>
+						<span>Scrum Master</span>
 					</figure>
 					<!-- end single member -->
 					
@@ -398,21 +432,22 @@
 				<div class="row mb50">
 				
 					<div class="sec-title text-center mb50 wow fadeInDown animated" data-wow-duration="500ms">
-						<h2>Let’s Discuss</h2>
+						<h2>Contact Us</h2>
 						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
 					</div>
 					
 					<div class="sec-sub-title text-center wow rubberBand animated" data-wow-duration="1000ms">
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
-					</div>
+						<p>
+							We are here to help and satisfy the needs of our users
+						</p>					</div>
 					
 					<!-- contact address -->
 					<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 wow fadeInLeft animated" data-wow-duration="500ms">
 						<div class="contact-address">
-							<h3>Cras at ultrices erat, sed vulputate!</h3>
-							<p>2345 Setwant natrer, 1234,</p>
-							<p>Washington. United States.</p>
-							<p>(401) 1234 567</p>
+							<h3>We are located in!</h3>
+							<p>Col. Santa Rosa, UTM university,</p>
+							<p>Mérida. Yucatán.</p>
+							<p>(999) 1234 567</p>
 						</div>
 					</div>
 					<!-- end contact address -->
@@ -455,10 +490,22 @@
 				</div>
 			</div>
 			
-			<!-- Google map -->
-			<div id="map_canvas" class="wow bounceInDown animated" data-wow-duration="500ms"></div>
+			<!-- Google map -->		
+			<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  			  <iframe
+       			 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.3508991265717!2d-89.61906932474587!3d20.938418980688315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5672270a784baf%3A0x764b40010695f0d9!2sUniversidad%20Tecnol%C3%B3gica%20Metropolitana!5e0!3m2!1ses-419!2smx!4v1699597871721!5m2!1ses-419!2smx"
+    			 width="100%" 
+       			 height="100%" 
+        		 style="position: absolute; top: 0; left: 0; border: 0;" 
+       	 		 allowfullscreen="" 
+       		 	 loading="lazy" 
+        		 referrerpolicy="no-referrer-when-downgrade">
+   			 </iframe>
+			</div>
+
+
 			<!-- End Google map -->
-			
+
 		</section>
 		
         <!--
@@ -473,8 +520,9 @@
 					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms">
 						<div class="footer-single">
 							<img src="img/footer-logo.png" alt="">
-							<p>eusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						</div>
+							<p>
+								Our only mission is to be able to take care of your information and offer you the transfer of documents safely.
+							</p>						</div>
 					</div>
 				
 					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
@@ -484,16 +532,15 @@
 								<input type="text" name="subscribe" id="subscribe">
 								<input type="submit" value="&#8594;" id="subs">
 							</form>
-							<p>eusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-						</div>
+							<p>
+								Receive information about how to make the internet a safe place
+							</p>						</div>
 					</div>
 				
 					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
 						<div class="footer-single">
 							<h6>Explore</h6>
 							<ul>
-								<li><a href="#">Inside Us</a></li>
-								<li><a href="#">Flickr</a></li>
 								<li><a href="#">Google</a></li>
 								<li><a href="#">Forum</a></li>
 							</ul>
@@ -505,9 +552,7 @@
 							<h6>Support</h6>
 							<ul>
 								<li><a href="#">Contact Us</a></li>
-								<li><a href="#">Market Blog</a></li>
 								<li><a href="#">Help Center</a></li>
-								<li><a href="#">Pressroom</a></li>
 							</ul>
 						</div>
 					</div>
@@ -516,7 +561,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<p class="copyright text-center">
-							Copyright © 2015 <a href="http://themefisher.com/">Themefisher</a>. All rights reserved. Designed y developed by <a href="http://themefisher.com/">Themefisher</a>
+							Copyright © 2023 <a href="#body">TechEncrypt!</a>. All rights reserved. Designed & developed by <a href="#body">TechEncrypt!</a>
 						</p>
 					</div>
 				</div>
@@ -622,5 +667,80 @@
 				});
 			});
 		</script>
+
+	
+<!--INICIA ESTILOS PARA MODAL LOGIN-->
+		<style>
+			#ventanaModal .modal-content {
+				width: 300px; /*Tamaño del cuadrado*/
+				height: 250px;
+				background-color: #000; 
+				color: #fff;
+				padding: 20px;
+				border-radius: 20px; 
+				margin: auto; /* Centra la ventana modal */
+				position: abtsolute;
+				top: 20px; bottom: 0; left: 0; right: 0;
+			}
+		
+			.login-btn {
+				display: block;
+				width: 100%;
+				padding: 10px;
+				margin-top: 10px;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				font-size: 16px;
+				color: #fff; /* Color del texto de los botones */
+			}
+		
+			.google-btn {
+				background-color: #808080; /* Gris */
+			}
+		
+			.facebook-btn {
+				background-color: #808080; /* Gris */
+			}
+		</style>
+
+<!--FINALIZA ESTILOS PARA MODAL LOGIN-->
+
+
+	<!--Esto es de la ventana modal-->
+					<!-- Esto es de la ventana modal y google -->
+			<!-- Inicialización de la API de Google -->
+						<!-- Script principal -->
+						<script>
+							var modal = document.getElementById("ventanaModal");
+							var abrirModal = document.getElementById("abrirModal");
+							var span = document.getElementsByClassName("cerrar")[0];
+			
+							abrirModal.addEventListener("click", function () {
+								modal.style.display = "block";
+							});
+			
+							span.addEventListener("click", function () {
+								modal.style.display = "none";
+							});
+			
+							window.addEventListener("click", function (event) {
+								if (event.target == modal) {
+								modal.style.display = "none";
+								}
+							});
+			
+							// Función para redirigir a la página de inicio de sesión de Google
+							function redirectToGoogleSignup() {
+								window.location.href = "{{ route('login') }}";
+							}
+			
+							// Función para redirigir a la página de Facebook
+							function redirectToFacebook() {
+								window.location.href = 'https://facebook.com';
+							}
+							</script>
+			
+						<!--Aqui termina la ventana modal y google-->
     </body>
 </html>
