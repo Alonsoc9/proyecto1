@@ -65,7 +65,7 @@
 					<!-- logo -->
                     <a class="navbar-brand" href="#body">
 						<h1 id="logo">
-							<img src="img/logo.png" alt="Brandi">
+							<img src="img/logomini.png" alt="Tech">
 						</h1>
 					</a>
 					<!-- /logo -->
@@ -127,7 +127,7 @@
 				<div class="carousel-inner" role="listbox">
 					
 					<!-- single slide -->
-					<div class="item active" style="background-image: url(img/banner.jpg);">
+					<div class="item active" style="background-image: url(img/bannerna.png);">
 						<div class="carousel-caption">
 							<h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">Tech<span> Encrypt!</span>!</h2>
 							<h3 data-wow-duration="1000ms" class="wow slideInLeft animated"><span class="color">/secure</span> Information.</h3>
@@ -144,7 +144,7 @@
 					<!-- end single slide -->
 					
 					<!-- single slide -->
-					<div class="item" style="background-image: url(img/banner.jpg);">
+					<div class="item" style="background-image: url(img/bannerv.jpg);">
 						<div class="carousel-caption">
 							<h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">Tech<span>Encrypt!</span>!</h2>
 							<h3 data-wow-duration="500ms" class="wow slideInLeft animated"><span class="color">/secure</span> Information</h3>
@@ -519,7 +519,7 @@
 				
 					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms">
 						<div class="footer-single">
-							<img src="img/footer-logo.png" alt="">
+							<img src="img/logomini.png" alt="">
 							<p>
 								Our only mission is to be able to take care of your information and offer you the transfer of documents safely.
 							</p>						</div>

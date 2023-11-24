@@ -1,51 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <title>Your Dashboard</title>
-</head>
-<body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Barra lateral -->
-            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
-                <div class="position-sticky">
-                    <ul class="nav flex-column">
-                        <!-- Contenido de la barra lateral -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Tu enlace 1
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Tu enlace 2
-                            </a>
-                        </li>
-                        <!-- Añade más enlaces según tus necesidades -->
-                    </ul>
-                </div>
-            </nav>
+@extends('layout')
+<br><br>
 
-            <!-- Contenido principal -->
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Tu Dashboard</h1>
-                    <button class="btn btn-primary" onclick="toggleSidebar()">Toggle Sidebar</button>
-                </div>
 
-                <!-- Contenido principal de tu dashboard -->
-            </main>
-        </div>
-    </div>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
 
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script>
-        function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('d-none');
-        }
-    </script>
-</body>
-</html>
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{asset('assets/lib/animate/animate.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+
+@section('content')
+    <h1>Title Example</h1>
+    <p>{{ auth()->user()->name }}</p>
+    <img src="img/TechEncrypt.png" alt="Team Member" style="max-width: 100%; height: auto;">
+    @endsection
+    
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('assets/lib/wow/wow.min.js')}}"></script>
+<script src="{{asset('assets/lib/easing/easing.min.js')}}"></script>
+<script src="{{asset('assets/lib/waypoints/waypoints.min.js')}}"></script>
+<script src="{{asset('assets/lib/counterup/conterup.min.js')}}"></script>
+<script src="{{asset('assets/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+<script src="{{asset('assets/lib/isotope/isotope.pkgd.min.js')}}"></script>
+<script src= "{{asset('assets/lib/lightbox/js/lightbox.min.js')}}"></script>
+
+<!-- Template Javascript -->
+<script src="{{asset('assets/js/main.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
