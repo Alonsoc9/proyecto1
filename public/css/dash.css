@@ -173,3 +173,14 @@ a.selected {
         height: 30px;
     }
 }
+
+
+.image-container {
+    text-align: right;
+    padding-right: 220px; /* Ajusta esto según sea necesario */
+  }
+
+.logo-img {
+    max-width: 40%; /* Ajusta el ancho máximo según sea necesario */
+    height: auto;
+  }
