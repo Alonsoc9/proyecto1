@@ -30,24 +30,23 @@
 <body>
         <!-- Service Start -->
         <div class="container text-center">
-    <h1>Descifrar Archivo</h1>
+    <h1>Decrypt File</h1>
 
     <form action="{{ route('decrypt') }}" method="post" enctype="multipart/form-data" class="mt-3">
         @csrf
         <div class="form-group">
-            <label for="archivo">Selecciona un archivo cifrado:</label>
+            <label for="archivo">Select a file encrypted:</label>
             <input type="file" name="archivo_cifrado" class="form-control" required>
         </div>
 
         <div class="form-group">
-            <label for="password">Contraseña:</label>
+            <label for="password">Password:</label>
             <input type="password" name="password" class="form-control" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Descifrar Archivo</button>
+        <button type="submit" class="btn btn-primary">Decrypt File</button>
     </form>
 <br><br>
-<a href="{{ url('/historial') }}" class="btn btn-warning py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Ver Historial de Archivos Encriptados</a>
     
         <!-- Service End -->
 

@@ -22,14 +22,14 @@
   
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <span class="btn btn-warning py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">
-        Hola, {{ auth()->user()->name }}
+        Hello, {{ auth()->user()->name }}
       </span>    
     </div>
 
-    <div class="image-container">
-      <!-- Agrega la imagen aquí -->
-      <img src="img/TechEncrypt.png" alt="Logo" class="logo-img">
-    </div>
+     <div class="image-container">
+     
+      <img src="img/logomini.png" alt="Logo" class="logo-img" width="200" height="200">
+    </div> 
   </header>
 
     <div class="menu__side" id="menu_side">
@@ -48,14 +48,14 @@
             <a href="{{ route('dashboard') }}" class="selected">
                 <div class="option">
                     <i class="fas fa-home" title="Inicio"></i>
-                    <h4>Inicio</h4>
+                    <h4>Home</h4>
                 </div>
             </a>
 
             <a href="{{ route('historial') }}">
                 <div class="option">
                   <i class="fa-solid fa-folder-open" title="Historial"></i>
-                    <h4>Historial</h4>
+                    <h4>History</h4>
                 </div>
             </a>
             
@@ -83,7 +83,7 @@
               <h4>Log Out</h4>
           </div>
       </a>
-      <img src="img/logomini.png" alt="logo" class="img-responsive" style="max-width: 50%; height: auto;">
+      <img src="img/logomini.png" alt="logo" class="img-responsive" style="max-width: 70%; height: auto;">
 
   </form>   
 

@@ -78,7 +78,8 @@
                         <li><a href="#features">Features</a></li>
                         <li><a href="#team">Team</a></li>
                         <li><a href="#contact">Contact</a></li>
-						<li id="abrirModal"><a href="#ventanaModal">Login</a></li>
+						<li><a href="javascript:void(0);" onclick="redirectToGoogleSignup()">Login</a></li>
+
                     </ul>
                 </nav>
 				<!-- /main nav -->
@@ -302,7 +303,7 @@
 					<!-- single member -->
 					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
 						<div class="member-thumb">
-							<img src="img/team/alonso.jpeg" alt="Team Member" class="img-responsive">
+							<img src="img/team/alonsoc1.jpg" alt="Team Member" class="img-responsive">
 							<figcaption class="overlay">
 								<h5>Cauich Córdova Jesus Alonso </h5>
 								<p>Expert in creating advanced algorithms</p>

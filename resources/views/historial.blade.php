@@ -27,7 +27,7 @@
     <!-- Agrega el contenido específico de la página de historial aquí -->
 
     <div style="text-align: center;">
-        <h1>Mis Archivos</h1>
+        <h1>My Files</h1>
     </div>
     
     <div class="table-responsive" style="max-width: 800px; overflow-x: auto; margin: 0 auto;">
@@ -35,9 +35,9 @@
             <thead class="table-dark">
                 <tr>
                     <th>ID</th>
-                    <th>Nombre de Archivo</th>
-                    <th>Fecha de Encriptación</th>
-                    <th>Descargar</th>
+                    <th>File Name</th>
+                    <th>Date of Encryption</th>
+                    <th>Download</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,7 +47,7 @@
                         <td>{{ $file->filename }}</td>
                         <td>{{ $file->created_at }}</td>
                         <td>
-                            <a href="{{ route('download', ['id' => $file->id]) }}">Descargar</a>
+                            <a href="{{ route('download', ['id' => $file->id]) }}">Download</a>
                         </td>
                     </tr>
                 @endforeach

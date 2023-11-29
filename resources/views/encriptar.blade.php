@@ -51,21 +51,24 @@
 <div class="row">
     <!-- Columna para cifrar archivos -->
     <div class="col-md-6">
-    <h1>Cifrar Archivo</h1>
+    <h1>Encrypt File</h1>
     <form action="{{ route('encrypt') }}" method="post" enctype="multipart/form-data" class="mt-3">
         @csrf
     <div class="form-group">
-                <label for="archivo">Selecciona un archivo:</label>
+                <label for="archivo">Select a file:</label>
                 <input type="file" name="archivo" class="form-control" required>
             </div>
 
             <div class="form-group">
-                <label for="password">Contraseña:</label>
+                <label for="password">Password:</label>
                 <input type="password" name="password" class="form-control" required>
             </div>
 
-            <button type="submit" class="btn btn-primary">Cifrar Archivo</button>
+            <button type="submit" class="btn btn-primary">Encrypt File</button>
         </form>
+        <br><br>
+        <a href="{{ url('/historial') }}" class="btn btn-warning py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">View history of encrypted files</a>
+
 
  @endsection
         
