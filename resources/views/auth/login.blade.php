@@ -16,7 +16,7 @@
 				<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
 
         <a href="auth/google" class="d-flex flex-column align-items-center mt-4">
-            <img src="{{asset('assets/login/images/icons/icon-google2.jpeg')}}" alt="GOOGLE" width="400" height="90">
+            <img src="{{asset('assets/login/images/icons/icon-google2.jpeg')}}" alt="GOOGLE" width="300" height="70">
         </a>
         <br> <div class="d-flex flex-column align-items-center mt-4"> OR </div><br>
         
